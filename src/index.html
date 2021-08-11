@@ -14,26 +14,46 @@
 
     <title>Webpack setup</title>
 </head>
-
 <!-- Comentario -->
 <body>
-    <h1>Webpack</h1>
-    <div class="row">
-        <div class="col s12 m6">
-            <div class="card">
-                <div class="card-image">
-                    <img id="gatito">
-                    <span class="card-title">Card Title</span>
-                    <a class="btn-floating halfway-fab waves-effect waves-light red"><i
-                            class="material-icons">add</i></a>
+    <div class="background-main">
+        <main class="container row">
+
+           <article class="col s6">
+            <h1 class="title-main">TODAY'S MEAL</h1>
+            <p class="flow-text">Try something new everyday!</p>
+            <a class="button-main waves-effect waves-light btn-large red accent-2 z-depth-4"><i class="material-icons left">shuffle</i>Random meal</a>
+           </article>
+
+           <article class="search-bar col s6">
+               <div class="input-field">
+                   <input type="text" id="autocomplete-input" class="autocomplete">
+                   <label for="autocomplete-input">Find a recipe</label>
+                   <i class="material-icons prefix">search</i>
+               </div>
+           </article>
+
+        </main>
+    </div>
+
+    <div>
+        <section class="container row">
+            <article class="col s4">
+                <div class="card">
+                    <div class="card-image">
+                        <img class="responsive-img" id="gatito">
+                        <span class="card-title">Card Title</span>
+                        <a class="btn-floating halfway-fab waves-effect waves-light red"><i
+                                class="material-icons">add</i></a>
+                    </div>
+                    <div class="card-content">
+                        <p>I am a very simple card. I am good at containing small bits of information. I am convenient
+                            because I require little markup to use effectively.</p>
+                    </div>
                 </div>
-                <div class="card-content">
-                    <p>I am a very simple card. I am good at containing small bits of information. I am convenient
-                        because I require little markup to use effectively.</p>
-                </div>
-            </div>
-        </div>
+            </article>
+
+        </section>
     </div>
 </body>
-
 </html>
