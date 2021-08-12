@@ -3,6 +3,9 @@
     margin: 0;
     padding: 0;
 }
+.row{
+    margin-bottom: 0;
+}
 .background-main{
     background-image: url("./assets/Main.png");
     background-size: cover;
@@ -28,9 +31,51 @@
     margin-top: 9.5rem;
     background-color: #ffffff;
     border: 1px solid #8492A6;
-    border-radius: 12px;
+    border-radius: 8px;
 }
 .input-field{
     padding: 0 25px 0px 0px;
     margin-bottom: 0px;
+}
+.input-field>label{
+    font-size: 1.3rem;
+}
+.input-field input[type=text]{
+    border-bottom: 1px solid #8492A6;
+    box-shadow: none;
+    width: 94%;
+}
+.input-field input[type=text]:focus:not{
+    border-bottom: none;
+    box-shadow: none;
+}
+.input-field .prefix.active {
+    color: #ffffff;
+}
+.input-field .prefix{
+    color: #ffffff;
+    background-color: #ff5252;
+    font-size: 3.5rem;
+    width: 3.5rem;
+    border-radius: 8px;
+    top: -0.4rem;
+    right: -0.2rem;
+}
+.background-section{
+    background-color: #FCFAF3;
+}
+.title-section{
+   color: #47525E;
+   border-top: 0;
+   font-weight: 700;
+}
+.title-section_line{
+    border-bottom: 5px solid #ff5252;
+    color: #ff5252;
+}
+.card.horizontal .card-image {
+    max-width: 50%;
+    display: flex;
+    align-items: center;
+    left: 1rem;
 }
