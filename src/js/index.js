@@ -8,6 +8,10 @@ import imgGatito6 from "../assets/IMG_1321.jpg";
 
 import imgFlag from "../assets/Flag.png"
 
+import imgBreakfast from "../assets/Breakfast.png"
+
+import imgIconoMX from "../assets/iconoMX.png";
+
 document.querySelector('#gatito').src = imgGatito;
 document.querySelector('#gatito2').src= imgGatito2;
 document.querySelector('#gatito3').src= imgGatito3;
@@ -16,3 +20,13 @@ document.querySelector('#gatito5').src= imgGatito5;
 document.querySelector('#gatito6').src= imgGatito6;
 
 document.querySelector('#flag').src= imgFlag; 
+
+document.querySelector('#breakfast').src= imgBreakfast;
+
+document.querySelector('#iconoMX').src=imgIconoMX;
+
+//Iniciador de Carrusel
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.carousel-slider');
+    var instances = M.Carousel.init(elems);
+});

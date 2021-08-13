@@ -1,8 +1,3 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
 .row{
     margin-bottom: 0;
 }
@@ -78,4 +73,21 @@
     display: flex;
     align-items: center;
     left: 1rem;
+}
+.background-sectionImg{
+    background-color: #ffffff;
+}
+.background-footer{
+    background-color: #ff5252;
+}
+.footer-text{
+    color: #ffffff;
+}
+.footer-img{
+    display: flex;
+    align-items: center;
+}
+.footer-iconoMX{
+    height: 20px;
+    margin-left: 8px;
 }
