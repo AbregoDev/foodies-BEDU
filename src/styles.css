@@ -106,6 +106,14 @@
 .background-sectionImg{
     background-color: #ffffff;
 }
+#about-section .flow-text{
+    font-weight: bold;
+    font-size: 30px;
+    color: #47525E;
+}
+#about-section a{ 
+    color: #969FAA;
+}
 .background-footer{
     background-color: #ff5252;
 }
