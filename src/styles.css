@@ -97,11 +97,48 @@
 #section-favorites .card p {
     color: #969FAA;
 }
+/* Carrusel */
+.carousel-paises {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+.carousel-paises {
+    display: flex;
+    justify-content: space-around;
+    height: 350px;
+}
+.carousel-paises .c-item {
+    display: none;
+    display: flex;
+    justify-content: space-around;
+}
+#car-btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#car-btns {  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#prev, #next {
+    cursor: pointer;
+    user-select: none; 
+    color: #ff5252;
+}
+/* Fin Carrusel */
+
 .card.horizontal .card-image {
-    max-width: 50%;
+    width: 30%;
+    height: auto;
     display: flex;
     align-items: center;
     left: 1rem;
+}
+#flag {
+    border-radius: 5%;
 }
 .background-sectionImg{
     background-color: #ffffff;

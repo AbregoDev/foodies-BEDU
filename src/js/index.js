@@ -13,7 +13,7 @@ import imgFav6 from "../assets/IMG_1321.jpg";
 
 
 //Países
-import imgFlag from "../assets/Flag.png"
+import imgFlag from "../assets/flags/Mexican.png"
 
 //Footer
 import imgBreakfast from "../assets/Breakfast.png"
@@ -43,7 +43,31 @@ document.querySelector('#breakfast').src= imgBreakfast;
 document.querySelector('#iconoMX').src=imgIconoMX;
 
 //Iniciador de Carrusel
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.carousel-slider');
-    var instances = M.Carousel.init(elems);
-});
+
+
+var slideIndex = 0;
+
+document.getElementById('prev').addEventListener("click", nextSlide);
+document.getElementById('next').addEventListener("click", prevSlide);
+
+showSlides(slideIndex);
+
+// Next/previous controls
+function nextSlide() {
+    showSlides(slideIndex += 1);
+}
+function prevSlide() {
+    showSlides(slideIndex += -1);
+}
+
+
+function showSlides(n) {
+    var i = 0;
+    var slides = document.getElementsByClassName("c-item");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    if (n > slides.length-1) {slideIndex = 0}
+    if (n < 0) {slideIndex = slides.length-1}
+    slides[slideIndex].style.display = "block";
+}
