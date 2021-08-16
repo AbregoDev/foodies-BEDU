@@ -1,4 +1,4 @@
-//IMPORTACIONES
+//#region IMPORTACIONES
 import css from "../styles.css";
 //Header principal
 import imgMain from "../assets/Main.png";
@@ -13,15 +13,15 @@ import imgFav6 from "../assets/IMG_1321.jpg";
 
 
 //Países
-import imgFlag from "../assets/flags/Mexican.png"
+import countryFlags from './flags';
 
 //Footer
 import imgBreakfast from "../assets/Breakfast.png"
  
 import imgIconoMX from "../assets/iconoMX.png";
+//#endregion
 
-
-//ASIGNAR RECURSOS IMPORTADOS
+//#region ASIGNAR RECURSOS IMPORTADOS
 
 //Header principal 
 document.querySelector("#background-main-img").src = imgMain;
@@ -34,21 +34,21 @@ document.querySelector('#favorites4').src = imgFav4;
 document.querySelector('#favorites5').src= imgFav5;
 document.querySelector('#favorites6').src= imgFav6;
 
-//Países
-document.querySelector('#flag').src= imgFlag; 
 
 //Footer
 document.querySelector('#breakfast').src= imgBreakfast;
 
 document.querySelector('#iconoMX').src=imgIconoMX;
 
-//Iniciador de Carrusel
+//#endregion
 
+//#region METODOS
+//Iniciador de Carrusel
 
 var slideIndex = 0;
 
-document.getElementById('prev').addEventListener("click", nextSlide);
-document.getElementById('next').addEventListener("click", prevSlide);
+document.getElementById('prev').addEventListener("click", prevSlide);
+document.getElementById('next').addEventListener("click", nextSlide);
 
 showSlides(slideIndex);
 
@@ -71,3 +71,38 @@ function showSlides(n) {
     if (n < 0) {slideIndex = slides.length-1}
     slides[slideIndex].style.display = "block";
 }
+//#endregion
+
+//#region API
+//#region REGIONS
+var regions = document.getElementsByClassName("card horizontal");
+console.log(regions);
+getRegions ()
+    .then(function (data) {
+
+        console.log(data);
+
+        var indexR = 0;
+        data.meals.forEach(function(data) {
+            console.log(data);
+            regions[indexR].children[1].children[0].children[0].innerHTML = data.strArea;
+            //card horizontal > card-stacked > card-content > flow-text >txt = string Area
+            regions[indexR].children[0].children[0].src = countryFlags[data.strArea];
+            //card horizontal > card-image > responsive-img > src = string Area
+            indexR++;
+        }) 
+        
+});
+
+
+function getRegions (){
+    return fetch('https://www.themealdb.com/api/json/v1/1/list.php?a=list')
+        .then(function(response) {
+            return response.json();
+        })
+}
+
+
+//#endregion
+
+//#endregion
