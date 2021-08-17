@@ -12,6 +12,10 @@ module.exports = {
             filename: 'index.html',
             template: './src/index.html',
         }),
+        new HtmlWebpackPlugin({
+            filename: 'recipeDetail.html',
+            template: './src/pages/recipeDetail/recipeDetail.html',
+        }),
     ],
     devServer: {
         contentBase: path.resolve(__dirname, 'dist'),

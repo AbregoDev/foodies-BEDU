@@ -1,5 +1,6 @@
 //#region IMPORTACIONES
 import css from "../styles.css";
+import recipeJS from '../pages/recipeDetail/recipeDetail.js';
 //Header principal
 import imgMain from "../assets/Main.png";
 
