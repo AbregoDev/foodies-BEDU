@@ -1,4 +1,5 @@
 import css from "../styles.css";
+import recipeJS from '../pages/recipeDetail/recipeDetail.js';
 import imgGatito from "../assets/IMG_1321.jpg";
 import imgGatito2 from "../assets/IMG_1321.jpg";
 import imgGatito3 from "../assets/IMG_1321.jpg";
