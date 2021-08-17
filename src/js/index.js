@@ -1,5 +1,6 @@
 //#region IMPORTACIONES
 import css from "../styles.css";
+import recipeRegionJS from "../pages/recipeRegion/recipeRegion.css" //Esta linea rompe los estilos en Main xD
 //Header principal
 import imgMain from "../assets/Main.png";
 
