@@ -93,6 +93,10 @@
     font-weight: bold;
     font-size: 30px;
     color: #47525E;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-bottom: 1%;;
 } 
 #section-favorites .card p {
     color: #969FAA;
@@ -147,6 +151,9 @@
     font-weight: bold;
     font-size: 30px;
     color: #47525E;
+}
+#about-section li{ 
+    color: #969FAA;
 }
 #about-section a{ 
     color: #969FAA;
