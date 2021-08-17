@@ -5,12 +5,6 @@ import recipeJS from '../pages/recipeDetail/recipeDetail.js';
 import imgMain from "../assets/Main.png";
 
 //Our favs
-import imgFav1 from "../assets/IMG_1321.jpg";
-import imgFav2 from "../assets/IMG_1321.jpg";
-import imgFav3 from "../assets/IMG_1321.jpg";
-import imgFav4 from "../assets/IMG_1321.jpg";
-import imgFav5 from "../assets/IMG_1321.jpg";
-import imgFav6 from "../assets/IMG_1321.jpg";
 
 
 //Países
@@ -26,14 +20,6 @@ import imgIconoMX from "../assets/iconoMX.png";
 
 //Header principal 
 document.querySelector("#background-main-img").src = imgMain;
-
-//Our favs
-document.querySelector('#favorites1').src = imgFav1;
-document.querySelector('#favorites2').src= imgFav2;
-document.querySelector('#favorites3').src= imgFav3;
-document.querySelector('#favorites4').src = imgFav4;
-document.querySelector('#favorites5').src= imgFav5;
-document.querySelector('#favorites6').src= imgFav6;
 
 
 //Footer
@@ -75,17 +61,66 @@ function showSlides(n) {
 //#endregion
 
 //#region API
+
+//#region FAVORITES
+var favs = document.getElementsByClassName("card fav");
+console.log(favs);
+var ourFav = [52854, 52858, 52895, 53014, 53013, 52765];
+// favoritos: pancakes, cheesecake, english breakfast, pizza, big mac, enchilada
+
+
+var indexF = 0;
+while (indexF < ourFav.length)
+{
+    assignById(ourFav[indexF], indexF);
+    indexF++;
+}
+
+function assignById (id, index) {
+    var baseUrl = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=";
+    baseUrl += ourFav[index];
+    getMealbyId (baseUrl)
+    .then(function (data) {
+        console.log(data);
+        //Imagen
+        favs[index].children[0].children[0].src = data.meals[0].strMealThumb;
+        //Título = Nombre platillo
+        favs[index].children[1].children[0].innerHTML = data.meals[0].strMeal;
+        //Tags
+        favs[index].children[1].children[1].innerHTML = getTags(data.meals[0].strTags);
+        console.log(getTags(data.meals[0].strTags));
+    });
+}
+
+
+function getMealbyId (urlId){
+    return fetch(urlId)
+        .then(function(response) {
+            return response.json();
+        })
+}
+
+function getTags (stringTags) {
+    var tags = "";
+    if (stringTags == null) {return tags = "No tags."}
+    var arrayTags = stringTags.split(',');
+    for (var i = 0; i < arrayTags.length; i++)
+    {
+        if (i == arrayTags.length-1) {tags+= "#"+ arrayTags[i];}
+        else {tags+= "#" + arrayTags[i] + ", ";}
+        
+    }
+    return tags;
+}
+//#endregion
+
 //#region REGIONS
 var regions = document.getElementsByClassName("card horizontal");
-console.log(regions);
 getRegions ()
     .then(function (data) {
 
-        console.log(data);
-
         var indexR = 0;
         data.meals.forEach(function(data) {
-            console.log(data);
             regions[indexR].children[1].children[0].children[0].innerHTML = data.strArea;
             //card horizontal > card-stacked > card-content > flow-text >txt = string Area
             regions[indexR].children[0].children[0].src = countryFlags[data.strArea];
