@@ -1,6 +1,10 @@
 import css from "./searchResult.css";
+import imgIconoMX from "../../assets/iconoMX.png";
 
-var search = "egg";
+document.querySelector('#iconoMX').src= imgIconoMX;
+
+
+var search = "chicken";
 
 var favs = document.getElementsByClassName("card fav");
 console.log(favs);
