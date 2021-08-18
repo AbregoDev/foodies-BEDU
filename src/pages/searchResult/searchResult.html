@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">    
+    <title>Search Results</title>
+</head>
+<body>
+<!--header & Nav-->
+    <nav>
+        <div class="nav-wrapper red accent-2">
+          <a href="./index.html" class="brand-logo"><i class="material-icons" id="logoIcon">lunch_dining</i>Foodies</a>
+        </div>
+    </nav>
+
+    <!--Seccion principal (buscador y boton random)-->
+    <div class="background-section">
+        <main class="container row" id="main-header">
+           <article class="search-bar col s6 offset-s3">
+               <div class="input-field">
+                   <input type="text" id="autocomplete-input" class="autocomplete">
+                   <label for="autocomplete-input">Find a recipe</label>
+                   <i class="material-icons prefix">search</i>
+               </div>
+           </article>
+        </main>
+    </div>
+
+<!--Seccion resultados en nombre-->      
+    <div class="background-section">
+        <section class="container row" id="section-favorites">
+
+            <article class="col s4">
+                <h4 class="title-section">Search Results</h4>
+            </article>
+            <article class="col s8">
+                <h4 class="title-section_line">&nbsp</h4>
+            </article>
+
+            <article class="col s4">
+                <div class="card fav">
+                    <div class="card-image">
+                        <img class="responsive-img" id="receta1">
+                        <a class="btn-floating halfway-fab waves-effect waves-light red"><i
+                                class="material-icons">arrow_forward</i></a>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title">Card Title</span>
+                        <p>I am a very simple card.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="col s4">
+                <div class="card fav">
+                    <div class="card-image">
+                        <img class="responsive-img" id="receta2">
+                        <a class="btn-floating halfway-fab waves-effect waves-light red"><i
+                                class="material-icons">arrow_forward</i></a>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title">Card Title</span>
+                        <p>I am a very simple card.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="col s4">
+                <div class="card fav">
+                    <div class="card-image">
+                        <img class="responsive-img" id="receta3">
+                        <a class="btn-floating halfway-fab waves-effect waves-light red"><i
+                                class="material-icons">arrow_forward</i></a>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title">Card Title</span>
+                        <p>I am a very simple card.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="col s4">
+                <div class="card fav">
+                    <div class="card-image">
+                        <img class="responsive-img" id="receta4">
+                        <a class="btn-floating halfway-fab waves-effect waves-light red"><i
+                                class="material-icons">arrow_forward</i></a>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title">Card Title</span>
+                        <p>I am a very simple card.</p>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="col s4">
+                <div class="card fav">
+                    <div class="card-image">
+                        <img class="responsive-img" id="receta5">
+                        <a class="btn-floating halfway-fab waves-effect waves-light red"><i
+                                class="material-icons">arrow_forward</i></a>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title">Card Title</span>
+                        <p>I am a very simple card.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="col s4">
+                <div class="card fav">
+                    <div class="card-image">
+                        <img class="responsive-img" id="receta6">
+                        <a class="btn-floating halfway-fab waves-effect waves-light red"><i
+                                class="material-icons">arrow_forward</i></a>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title">Card Title</span>
+                        <p>I am a very simple card.</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </div>
+
+<!--Seccion resultados "Made with ..."-->      
+<div class="background-section">
+    <section class="container row" id="section-favorites">
+
+        <article class="col s4">
+            <h4 class="title-section">Made with</h4>
+        </article>
+        <article class="col s8">
+            <h4 class="title-section_line">&nbsp</h4>
+        </article>
+
+        <article class="col s4">
+            <div class="card">
+                <div class="card-image">
+                    <img class="responsive-img" id="receta1">
+                    <a class="btn-floating halfway-fab waves-effect waves-light red"><i
+                            class="material-icons">arrow_forward</i></a>
+                </div>
+                <div class="card-content">
+                    <span class="card-title">Card Title</span>
+                    <p>I am a very simple card.</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="col s4">
+            <div class="card">
+                <div class="card-image">
+                    <img class="responsive-img" id="receta2">
+                    <a class="btn-floating halfway-fab waves-effect waves-light red"><i
+                            class="material-icons">arrow_forward</i></a>
+                </div>
+                <div class="card-content">
+                    <span class="card-title">Card Title</span>
+                    <p>I am a very simple card.</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="col s4">
+            <div class="card">
+                <div class="card-image">
+                    <img class="responsive-img" id="receta3">
+                    <a class="btn-floating halfway-fab waves-effect waves-light red"><i
+                            class="material-icons">arrow_forward</i></a>
+                </div>
+                <div class="card-content">
+                    <span class="card-title">Card Title</span>
+                    <p>I am a very simple card.</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="col s4">
+            <div class="card">
+                <div class="card-image">
+                    <img class="responsive-img" id="receta4">
+                    <a class="btn-floating halfway-fab waves-effect waves-light red"><i
+                            class="material-icons">arrow_forward</i></a>
+                </div>
+                <div class="card-content">
+                    <span class="card-title">Card Title</span>
+                    <p>I am a very simple card.</p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="col s4">
+            <div class="card">
+                <div class="card-image">
+                    <img class="responsive-img" id="receta5">
+                    <a class="btn-floating halfway-fab waves-effect waves-light red"><i
+                            class="material-icons">arrow_forward</i></a>
+                </div>
+                <div class="card-content">
+                    <span class="card-title">Card Title</span>
+                    <p>I am a very simple card.</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="col s4">
+            <div class="card">
+                <div class="card-image">
+                    <img class="responsive-img" id="receta6">
+                    <a class="btn-floating halfway-fab waves-effect waves-light red"><i
+                            class="material-icons">arrow_forward</i></a>
+                </div>
+                <div class="card-content">
+                    <span class="card-title">Card Title</span>
+                    <p>I am a very simple card.</p>
+                </div>
+            </div>
+        </article>
+    </section>
+</div>
+
+<!--Footer de pagina-->
+<footer>
+    <div class="background-footer">
+        <section class="container row">
+            <article class="col s4">
+                <h6 class="footer-text">©️2021 all rights reserved</h6>
+            </article>
+            <article class="col s4 center">
+                <h6 class="footer-text"><strong>Foodies</strong></h6> 
+            </article>
+            <article class="footer-img col s4">
+                <h6 class="footer-text">Proudly made in México</h6>
+                <img class="footer-iconoMX" id="iconoMX" alt="icon made in mexico">
+            </article>
+        </section>
+    </div>
+</footer>
+</body>
+</html>

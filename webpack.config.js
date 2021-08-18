@@ -6,7 +6,7 @@ module.exports = {
         index: './src/js/index.js',
         recipe: './src/pages/recipeDetail/recipeDetail.js',
         region: './src/pages/recipeRegion/recipeRegion.js',
-        // search: './src/pages/search/search.js',
+        searchResult: './src/pages/searchResult/searchResult.js',
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -29,9 +29,9 @@ module.exports = {
             chunks: ['region'],
         }),
         new HtmlWebpackPlugin({
-            filename: 'search.html',
-            template: './src/pages/search/search.html',            
-            // chunks: ['search'],
+            filename: 'searchResult.html',
+            template: './src/pages/searchResult/searchResult.html',            
+            chunks: ['searchResult'],
         })
     ],
     devServer: {

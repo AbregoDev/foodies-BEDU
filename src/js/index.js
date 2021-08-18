@@ -143,3 +143,9 @@ console.log('Chingue a su madre el recipeDetails');
 //#endregion
 
 //#endregion
+
+
+function valueSender(region){
+    localStorage.setItem("region", region);
+    window.location.href='recipeRegion.html';
+}
