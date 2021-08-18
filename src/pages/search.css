@@ -1,29 +1,12 @@
 .row{
     margin-bottom: 0;
 }
-.background-main{
-    /* background-image: url("./assets/Main.png");
-    background-size: cover;
-    height: 600px; */
-    position: relative;
-}
-#background-main-img {
-    width: 100%;
-    height: auto;
-    min-height: 600px;
-    min-width: 800px;
-}
-#main-header {
-    position: absolute;
-    top: 10%;
-    left: 18%;
-}
+
 .title-main {
     color:#47525E;
     font-size: 3.5rem;
     line-height: 110%;
     margin: 7rem 0 1rem 0;
-    font-weight: 400;
 }
 .flow-text{
     color: #47525E;
@@ -34,7 +17,6 @@
     padding: 0 16px;
     font-size: 18px;
     border-radius: 12px;
-    font-weight: bolder;
 }
 .search-bar{
     margin-top: 9.5rem;
@@ -79,84 +61,18 @@
    font-weight: 700;
 }
 .title-section_line{
+    padding-top: 30px;
     border-bottom: 5px solid #ff5252;
     color: #ff5252;
 }
-#section-favorites .card {
-    border-radius: 5%;
-}
-#section-favorites .card .card-image .responsive-img {
-    border-top-left-radius: 5%;
-    border-top-right-radius: 5%;
-}
-#section-favorites .card .card-title {
-    font-weight: bold;
-    font-size: 30px;
-    color: #47525E;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    padding-bottom: 1%;;
-} 
-#section-favorites .card p {
-    color: #969FAA;
-}
-/* Carrusel */
-.carousel-paises {
-    max-width: 1000px;
-    position: relative;
-    margin: auto;
-}
-.carousel-paises {
-    display: flex;
-    justify-content: space-around;
-    height: 350px;
-}
-.carousel-paises .c-item {
-    display: none;
-    display: flex;
-    justify-content: space-around;
-}
-#car-btn-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-#car-btns {  
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-#prev, #next {
-    cursor: pointer;
-    user-select: none; 
-    color: #ff5252;
-}
-/* Fin Carrusel */
-
 .card.horizontal .card-image {
-    width: 30%;
-    height: auto;
+    max-width: 50%;
     display: flex;
     align-items: center;
     left: 1rem;
 }
-#flag {
-    border-radius: 5%;
-}
 .background-sectionImg{
     background-color: #ffffff;
-}
-#about-section .flow-text{
-    font-weight: bold;
-    font-size: 30px;
-    color: #47525E;
-}
-#about-section li{ 
-    color: #969FAA;
-}
-#about-section a{ 
-    color: #969FAA;
 }
 .background-footer{
     background-color: #ff5252;
@@ -208,4 +124,9 @@
     background-color: green;
     color: blue;
 }
+/*
+body{
+    background-color: #FCFAF3;
+}*/
+
 

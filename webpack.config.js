@@ -21,6 +21,14 @@ module.exports = {
             template: './src/pages/recipeDetail/recipeDetail.html',
             chunks: ['recipe'],
         }),
+        new HtmlWebpackPlugin({
+            filename: 'recipeRegion.html',
+            template: './src/pages/recipeRegion/recipeRegion.html',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'search.html',
+            template: './src/pages/search.html',            
+        })
     ],
     devServer: {
         contentBase: path.resolve(__dirname, 'dist'),
