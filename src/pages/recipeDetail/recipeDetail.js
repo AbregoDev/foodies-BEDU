@@ -3,12 +3,18 @@ import enchiladas from "../../assets/enchilada.jpg";
 import beef from "../../assets/Beef.png";
 
 document.getElementById('recipeImage').src = enchiladas;
-document.getElementById('ing1').src = beef;
+// document.getElementById('ing1').src = beef;
 document.getElementById('ing2').src = beef;
 document.getElementById('ing3').src = beef;
-document.getElementById('ing4').src = beef;
-document.getElementById('ing5').src = beef;
 
+// Get a random recipe Id
+function getRandomRecipe() {
+    const apiUrl = new URL('https://www.themealdb.com/api/json/v1/1/random.php');
+    return fetch(apiUrl)
+        .then(response => response.json());
+}
+
+// Get a recipe by Id
 function getRecipeById(id) {
     const apiUrl = new URL('https://www.themealdb.com/api/json/v1/1/lookup.php');
     // Add id (i) param
@@ -44,7 +50,7 @@ function deleteChildren(parentComponent) {
 function replaceTextChild(parentComponent, text, replace = true) {
     const textNode = document.createTextNode(text);
     // Remove children if replace is true and if children exist
-    if(replace && parentComponent.hasChildNodes()) {
+    if (replace && parentComponent.hasChildNodes()) {
         deleteChildren(parentComponent);
     }
     // Add text
@@ -52,11 +58,11 @@ function replaceTextChild(parentComponent, text, replace = true) {
 }
 
 function populateTags(parentComponent, tagsArray, replaceChildren = true) {
-    if(replaceChildren) {
+    if (replaceChildren) {
         deleteChildren(parentComponent);
     }
 
-    for(const tag of tagsArray) {
+    for (const tag of tagsArray) {
         // Create elements
         const anchor = document.createElement("a");
         const span = document.createElement("span");
@@ -76,7 +82,7 @@ function populateTags(parentComponent, tagsArray, replaceChildren = true) {
 
 function populateIngredientsAndMeasures(
     parentComponent, ingredientsArray, measuresArray, replaceChildren = true) {
-    if(replaceChildren) {
+    if (replaceChildren) {
         deleteChildren(parentComponent);
     }
 
@@ -85,7 +91,7 @@ function populateIngredientsAndMeasures(
     row.className = 'row';
 
     // Add every card column to row
-    for(let k = 0; k < ingredientsArray.length; k++) {
+    for (let k = 0; k < ingredientsArray.length; k++) {
         // Create elements
         const divCol = document.createElement('div');
         const divContainer = document.createElement('div');
@@ -124,49 +130,61 @@ function populateIngredientsAndMeasures(
     parentComponent.appendChild(row);
 }
 
-console.log('Chingue a su madre el index');
+function populateFromRecipeId(id) {
+    getRecipeById(id)
+        .then(response => {
+            // Get recipe object
+            const meal = response.meals[0];
+            // Create object just with the needed information
+            const recipe = {
+                imageUrl: meal.strMealThumb,
+                title: meal.strMeal,
+                category: meal.strCategory,
+                region: meal.strArea,
+                tags: meal.strTags ? meal.strTags.split(',') : [],
+                ingredients: getIngredients(meal),
+                measures: getMeasures(meal),
+            };
 
-// Take id from URL params
-const urlParams = new URLSearchParams(window.location.search);
-const id = urlParams.get('id') ?? 52765;
+            // Get elements to set
+            const recipeImage = document.getElementById('recipeImage');
+            const recipeTitle = document.getElementById('recipe-details-title');
+            const recipeCategory = document.getElementById('recipe-details-category');
+            const recipeRegion = document.getElementById('recipe-details-region');
 
-// Populate page
-getRecipeById(id)
-    .then(response => {
-        // Get recipe object
-        const meal = response.meals[0];
-        // Create object just with the needed information
-        const recipe = {
-            imageUrl: meal.strMealThumb,
-            title: meal.strMeal,
-            category: meal.strCategory,
-            region: meal.strArea,
-            tags: meal.strTags ? meal.strTags.split(',') : [],
-            ingredients: getIngredients(meal),
-            measures: getMeasures(meal),
-        };
-        
-        // Get elements to set
-        const recipeImage = document.getElementById('recipeImage');
-        const recipeTitle = document.getElementById('recipe-details-title');
-        const recipeCategory = document.getElementById('recipe-details-category');
-        const recipeRegion = document.getElementById('recipe-details-region');
+            // Set recipe image
+            recipeImage.src = recipe.imageUrl;
 
-        // Set recipe image
-        recipeImage.src = recipe.imageUrl;
+            // Set elements text
+            replaceTextChild(recipeTitle, recipe.title);
+            replaceTextChild(recipeCategory, recipe.category);
+            replaceTextChild(recipeRegion, recipe.region);
 
-        // Set elements text
-        replaceTextChild(recipeTitle, recipe.title);
-        replaceTextChild(recipeCategory, recipe.category);
-        replaceTextChild(recipeRegion, recipe.region);
+            // Set recipe tags
+            // Get categories container
+            const tagsContainer = document.getElementById('categories');
+            populateTags(tagsContainer, recipe.tags);
 
-        // Set recipe tags
-        // Get categories container
-        const tagsContainer = document.getElementById('categories');
-        populateTags(tagsContainer, recipe.tags);
+            // Set ingredients tags
+            // Get ingredients container
+            const ingredientsContainer = document.getElementsByClassName('ingredientsGrid')[0];
+            populateIngredientsAndMeasures(ingredientsContainer, recipe.ingredients, recipe.measures);
+        });
+}
 
-        // Set ingredients tags
-        // Get ingredients container
-        const ingredientsContainer = document.getElementsByClassName('ingredientsGrid')[0];
-        populateIngredientsAndMeasures(ingredientsContainer, recipe.ingredients, recipe.measures);
-    });
+function init() {
+    // Get a random recipe Id
+    getRandomRecipe()
+        .then(resp => {
+            // Random Id
+            const randomId = resp.meals[0].idMeal;
+
+            // Take id from URL params
+            const urlParams = new URLSearchParams(window.location.search);
+            const idParam = urlParams.get('id')
+
+            populateFromRecipeId(idParam ?? randomId);
+        });
+}
+
+init();

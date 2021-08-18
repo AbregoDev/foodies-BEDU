@@ -122,18 +122,27 @@
     margin-top: 60px;
 }
 
+#recipeIngredients .loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
 #recipeIngredients .ingredientContainer {
     border: 1px solid gray;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     margin: 0 20px 50px;
-    height: 400px;
+    
+    height: 100%;
 }
 
 #recipeIngredients img {
     width: 80%;
     align-self: center;
+    margin: 20px;
 }
 
 #recipeIngredients hr {
@@ -156,6 +165,7 @@
     color: #47525E;
     margin: 10px 20px;
     text-transform: capitalize;
+    height: 4rem;
 }
 
 #recipeInstructions {
