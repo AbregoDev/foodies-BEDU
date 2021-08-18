@@ -35,6 +35,10 @@ getMealByRegion()
 
             let a = document.createElement('a');
             a.className = "btn-floating halfway-fab waves-effect waves-light red";
+            // Link to recipe details
+            const recipeId = data.meals[0].idMeal
+            const recipeLink = `recipeDetail.html?id=${recipeId}`;
+            a.href = recipeLink;
 
             let i = document.createElement('i');
             i.className = "material-icons";
