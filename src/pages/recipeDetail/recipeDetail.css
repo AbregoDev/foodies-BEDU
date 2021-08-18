@@ -195,3 +195,19 @@
     color: #47525E;
     margin-bottom: 40px;
 }
+
+.background-footer{
+    background-color: #ff5252;
+    margin-bottom: -20px;
+}
+.footer-text{
+    color: #ffffff;
+}
+.footer-img{
+    display: flex;
+    align-items: center;
+}
+.footer-iconoMX{
+    height: 20px;
+    margin-left: 8px;
+}
