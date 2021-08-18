@@ -194,6 +194,10 @@
     margin-bottom: 20px;
 }
 
+footer {
+    margin-top: 60px;
+}
+
 .background-footer{
     background-color: #ff5252;
     margin-bottom: -20px;
