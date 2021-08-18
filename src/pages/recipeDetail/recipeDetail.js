@@ -89,7 +89,7 @@ function populateIngredientsAndMeasures(
         // Create elements
         const divCol = document.createElement('div');
         const divContainer = document.createElement('div');
-        const recipeImage = document.createElement('img');
+        const ingredientImage = document.createElement('img');
         const divider = document.createElement('hr');
         const ingredientName = document.createElement('h5');
         const ingredientNameText = document.createTextNode(ingredientsArray[k]);
@@ -98,7 +98,7 @@ function populateIngredientsAndMeasures(
 
         // Nest elements
         divCol.appendChild(divContainer);
-        divContainer.appendChild(recipeImage);
+        divContainer.appendChild(ingredientImage);
         divContainer.appendChild(divider);
         divContainer.appendChild(ingredientName);
         ingredientName.appendChild(ingredientNameText);
@@ -114,7 +114,7 @@ function populateIngredientsAndMeasures(
         // Set image
         const encodedIngredientName = ingredientsArray[k].replace(' ', '%20');
         const imageUrl = `https://www.themealdb.com/images/ingredients/${encodedIngredientName}.png`;
-        recipeImage.src = imageUrl;
+        ingredientImage.src = imageUrl;
 
         // Append card colum to row
         row.appendChild(divCol);
@@ -124,30 +124,36 @@ function populateIngredientsAndMeasures(
     parentComponent.appendChild(row);
 }
 
-// console.log(window.location.search);
 console.log('Chingue a su madre el index');
 
-getRecipeById(52765)
+// Take id from URL params
+const urlParams = new URLSearchParams(window.location.search);
+const id = urlParams.get('id') ?? 52765;
+
+// Populate page
+getRecipeById(id)
     .then(response => {
+        // Get recipe object
         const meal = response.meals[0];
-        console.log(meal);
+        // Create object just with the needed information
         const recipe = {
             imageUrl: meal.strMealThumb,
             title: meal.strMeal,
             category: meal.strCategory,
             region: meal.strArea,
-            tags: meal.strTags.split(','),
+            tags: meal.strTags ? meal.strTags.split(',') : [],
             ingredients: getIngredients(meal),
             measures: getMeasures(meal),
         };
-        console.log(recipe);
-
         
-
         // Get elements to set
+        const recipeImage = document.getElementById('recipeImage');
         const recipeTitle = document.getElementById('recipe-details-title');
         const recipeCategory = document.getElementById('recipe-details-category');
         const recipeRegion = document.getElementById('recipe-details-region');
+
+        // Set recipe image
+        recipeImage.src = recipe.imageUrl;
 
         // Set elements text
         replaceTextChild(recipeTitle, recipe.title);
