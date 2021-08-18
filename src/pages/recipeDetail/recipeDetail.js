@@ -1,7 +1,7 @@
 import recipeDetailcss from "./recipeDetail.css"
 import imgIconoMX from "../../assets/iconoMX.png";
 
-document.querySelector('#iconoMX').src= imgIconoMX;
+document.querySelector('#iconoMX').src = imgIconoMX;
 
 // Get a random recipe Id
 function getRandomRecipe() {
@@ -43,7 +43,7 @@ function deleteChildren(parentComponent) {
     }
 }
 
-function replaceTextChild(parentComponent, text, replace = true) {
+function setTextChild(parentComponent, text, replace = true) {
     const textNode = document.createTextNode(text);
     // Remove children if replace is true and if children exist
     if (replace && parentComponent.hasChildNodes()) {
@@ -126,11 +126,41 @@ function populateIngredientsAndMeasures(
     parentComponent.appendChild(row);
 }
 
+function populateInstructions(parentComponent, instructionsRaw, replaceChildren = true) {
+    if (replaceChildren) {
+        deleteChildren(parentComponent);
+    }
+
+    // Separate by new line (\r\n) and delete white spaces
+    const instructionsArray = instructionsRaw.split('\r\n').filter(s => s);
+
+    for (const instruction of instructionsArray) {
+        // Create elements
+        const h3 = document.createElement('h3');
+        const icon = document.createElement('i');
+        const iconName = document.createTextNode('fiber_manual_record');
+        const instructionText = "\t" + instruction;
+        const instructionTextNode = document.createTextNode(instructionText);
+
+        // Nest elements
+        h3.appendChild(icon);
+        h3.appendChild(instructionTextNode);
+        icon.appendChild(iconName);
+
+        // Set class
+        icon.className = 'material-icons'
+
+        // Append tag to container
+        parentComponent.appendChild(h3);
+    }
+}
+
 function populateFromRecipeId(id) {
     getRecipeById(id)
         .then(response => {
             // Get recipe object
             const meal = response.meals[0];
+
             // Create object just with the needed information
             const recipe = {
                 imageUrl: meal.strMealThumb,
@@ -140,7 +170,11 @@ function populateFromRecipeId(id) {
                 tags: meal.strTags ? meal.strTags.split(',') : [],
                 ingredients: getIngredients(meal),
                 measures: getMeasures(meal),
+                instructions: meal.strInstructions,
             };
+            const title = document.getElementsByTagName('title')[0];
+            const newTitle = `${recipe.title} in Foodies!`;
+            setTextChild(title, newTitle);
 
             // Get elements to set
             const imageWraper = document.getElementById('imageContainer');
@@ -157,19 +191,24 @@ function populateFromRecipeId(id) {
             imageWraper.replaceChild(recipeImage, loader);
 
             // Set elements text
-            replaceTextChild(recipeTitle, recipe.title);
-            replaceTextChild(recipeCategory, recipe.category);
-            replaceTextChild(recipeRegion, recipe.region);
+            setTextChild(recipeTitle, recipe.title);
+            setTextChild(recipeCategory, recipe.category);
+            setTextChild(recipeRegion, recipe.region);
 
             // Set recipe tags
             // Get categories container
             const tagsContainer = document.getElementById('categories');
             populateTags(tagsContainer, recipe.tags);
 
-            // Set ingredients tags
+            // Set ingredients cards
             // Get ingredients container
-            const ingredientsContainer = document.getElementsByClassName('ingredientsGrid')[0];
+            const ingredientsContainer = document.getElementById('ingredientsGrid');
             populateIngredientsAndMeasures(ingredientsContainer, recipe.ingredients, recipe.measures);
+
+            // Set instructions
+            // Get instructions container
+            const instructionsContainer = document.getElementById('recipeText');
+            populateInstructions(instructionsContainer, recipe.instructions);
         });
 }
 

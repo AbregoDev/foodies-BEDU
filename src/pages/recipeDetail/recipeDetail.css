@@ -126,7 +126,7 @@
     align-self: flex-end;
 }
 
-#recipeIngredients .ingredientsGrid {
+#ingredientsGrid {
     margin-top: 60px;
 }
 
@@ -164,6 +164,7 @@
     color: #47525E;
     margin: 10px 20px;
     text-transform: capitalize;
+    height: 3rem;
 }
 
 #recipeIngredients .ingredientQuantity {
@@ -196,12 +197,13 @@
     color: #47525E;
 }
 
-#recipeInstructions .recipeText h3 {
+#recipeText h3 {
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     font-size: 26px;
     color: #47525E;
-    margin-bottom: 40px;
+    line-height: 3rem;
+    margin-bottom: 20px;
 }
 
 .background-footer{
