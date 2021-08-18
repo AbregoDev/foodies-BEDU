@@ -24,7 +24,7 @@ document.querySelector("#background-main-img").src = imgMain;
 
 //Footer
 document.querySelector('#breakfast').src= imgBreakfast;
-
+document.querySelector('#iconoMX').src = imgIconoMX;
 
 
 //#endregion
