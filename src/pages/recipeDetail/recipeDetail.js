@@ -153,8 +153,6 @@ function populateFromRecipeId(id) {
             const recipeImage = document.createElement('img');
             recipeImage.id = 'recipeImage';
             recipeImage.src = recipe.imageUrl;
-            console.log(imageWraper);
-            console.log(loader);
             // Replace loader with recipe image
             imageWraper.replaceChild(recipeImage, loader);
 
