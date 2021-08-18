@@ -106,6 +106,9 @@
     padding-bottom: 1%;;
 }
 /* Carrusel */
+a {
+    cursor: pointer;
+}
 .carousel-paises {
     max-width: 1000px;
     position: relative;

@@ -108,7 +108,7 @@ function populateIngredientsAndMeasures(
         ingredientQuantity.appendChild(ingredientQuantityText);
 
         // Set classes
-        divCol.className = 'col s4';
+        divCol.className = 'col s3';
         divContainer.className = 'ingredientContainer';
         ingredientName.className = 'ingredientName';
         ingredientQuantity.className = 'ingredientQuantity';
