@@ -2,7 +2,7 @@ import recipeDetailcss from "./recipeDetail.css"
 import enchiladas from "../../assets/enchilada.jpg";
 import beef from "../../assets/Beef.png";
 
-document.getElementById('recipeImage').src = enchiladas;
+// document.getElementById('recipeImage').src = enchiladas;
 // document.getElementById('ing1').src = beef;
 document.getElementById('ing2').src = beef;
 document.getElementById('ing3').src = beef;
@@ -147,13 +147,20 @@ function populateFromRecipeId(id) {
             };
 
             // Get elements to set
-            const recipeImage = document.getElementById('recipeImage');
+            const imageWraper = document.getElementById('imageContainer');
+            const loader = document.getElementById('main-loader');
             const recipeTitle = document.getElementById('recipe-details-title');
             const recipeCategory = document.getElementById('recipe-details-category');
             const recipeRegion = document.getElementById('recipe-details-region');
 
-            // Set recipe image
+            // Create image and set source
+            const recipeImage = document.createElement('img');
+            recipeImage.id = 'recipeImage';
             recipeImage.src = recipe.imageUrl;
+            console.log(imageWraper);
+            console.log(loader);
+            // Replace loader with recipe image
+            imageWraper.replaceChild(recipeImage, loader);
 
             // Set elements text
             replaceTextChild(recipeTitle, recipe.title);
