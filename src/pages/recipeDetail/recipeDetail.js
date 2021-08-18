@@ -1,6 +1,9 @@
 import recipeDetailcss from "./recipeDetail.css"
 import enchiladas from "../../assets/enchilada.jpg";
 import beef from "../../assets/Beef.png";
+import imgIconoMX from "../../assets/iconoMX.png";
+
+document.querySelector('#iconoMX').src= imgIconoMX;
 
 // document.getElementById('recipeImage').src = enchiladas;
 // document.getElementById('ing1').src = beef;
