@@ -1,6 +1,6 @@
 //#region IMPORTACIONES
 import css from "../styles.css";
-import recipeJS from '../pages/recipeDetail/recipeDetail.js';
+// import recipeJS from '../pages/recipeDetail/recipeDetail.js';
 //Header principal
 import imgMain from "../assets/Main.png";
 
@@ -77,15 +77,15 @@ function showSlides(n) {
 //#region API
 //#region REGIONS
 var regions = document.getElementsByClassName("card horizontal");
-console.log(regions);
+// console.log(regions);
 getRegions ()
     .then(function (data) {
 
-        console.log(data);
+        // console.log(data);
 
         var indexR = 0;
         data.meals.forEach(function(data) {
-            console.log(data);
+            // console.log(data);
             regions[indexR].children[1].children[0].children[0].innerHTML = data.strArea;
             //card horizontal > card-stacked > card-content > flow-text >txt = string Area
             regions[indexR].children[0].children[0].src = countryFlags[data.strArea];
@@ -103,6 +103,7 @@ function getRegions (){
         })
 }
 
+console.log('Chingue a su madre el recipeDetails');
 
 //#endregion
 

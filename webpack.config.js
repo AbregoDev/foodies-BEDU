@@ -2,19 +2,24 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: './src/js/index.js',
+    entry: {
+        index: './src/js/index.js',
+        recipe: './src/pages/recipeDetail/recipeDetail.js',
+    },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js',
+        filename: '[name].bundle.js',
     },
     plugins: [
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: './src/index.html',
+            chunks: ['index']
         }),
         new HtmlWebpackPlugin({
             filename: 'recipeDetail.html',
             template: './src/pages/recipeDetail/recipeDetail.html',
+            chunks: ['recipe'],
         }),
     ],
     devServer: {

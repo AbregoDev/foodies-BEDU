@@ -128,6 +128,7 @@
     display: flex;
     flex-direction: column;
     margin: 0 20px 50px;
+    height: 400px;
 }
 
 #recipeIngredients img {
@@ -145,6 +146,7 @@
     font-size: 24px;
     color: #47525E;
     margin: 10px 20px;
+    text-transform: capitalize;
 }
 
 #recipeIngredients .ingredientQuantity {
@@ -153,6 +155,7 @@
     font-size: 24px;
     color: #47525E;
     margin: 10px 20px;
+    text-transform: capitalize;
 }
 
 #recipeInstructions {
