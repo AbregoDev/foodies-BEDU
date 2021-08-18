@@ -10,11 +10,11 @@ import imgReceta6 from "../../assets/enchilada.jpg";
 import imgIconoMX from "../../assets/iconoMX.png";
 
 
-// document.querySelector('#receta1').src= imgReceta1;
-// document.querySelector('#receta2').src= imgReceta2;
-// document.querySelector('#receta3').src= imgReceta3;
-// document.querySelector('#receta4').src= imgReceta4;
-// document.querySelector('#receta5').src= imgReceta5;
-// document.querySelector('#receta6').src= imgReceta6;
+document.querySelector('#receta1').src= imgReceta1;
+document.querySelector('#receta2').src= imgReceta2;
+document.querySelector('#receta3').src= imgReceta3;
+document.querySelector('#receta4').src= imgReceta4;
+document.querySelector('#receta5').src= imgReceta5;
+document.querySelector('#receta6').src= imgReceta6;
 
-// document.querySelector('#iconoMX').src= imgIconoMX;
+document.querySelector('#iconoMX').src= imgIconoMX;
