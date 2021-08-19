@@ -18,14 +18,14 @@
      border-bottom: 5px solid #ff5252;
      color: #ff5252;
  }
-#section-favorites .card {
+#section-card .card {
     border-radius: 5%;
 }
-#section-favorites .card .card-image .responsive-img {
+#section-card .card .card-image .responsive-img {
     border-top-left-radius: 5%;
     border-top-right-radius: 5%;
 }
-#section-favorites .card .card-title {
+#section-card .card .card-title {
     font-weight: bold;
     font-size: 30px;
     color: #47525E;
@@ -34,7 +34,7 @@
     overflow: hidden;
     padding-bottom: 1%;;
 } 
-#section-favorites .card p {
+#section-card .card p {
     color: #969FAA;
     white-space: nowrap;
     text-overflow: ellipsis;

@@ -138,7 +138,6 @@ function getRegions (){
         })
 }
 
-console.log('Chingue a su madre el recipeDetails');
 
 //#endregion
 
@@ -148,4 +147,8 @@ console.log('Chingue a su madre el recipeDetails');
 function valueSender(region){
     localStorage.setItem("region", region);
     window.location.href='recipeRegion.html';
+}
+function valueSenderSearch(search){
+    localStorage.setItem("search", search);
+    window.location.href='searchResults.html';
 }
