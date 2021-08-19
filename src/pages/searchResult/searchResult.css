@@ -23,16 +23,27 @@
     font-weight: 700;
  }
 
-#section-favorites .card {
+ .title-no-found{
+    color: #ff5252;
+    border-top: 0;
+    font-weight: 500;
+    text-align: center;
+ }
+ #sad-face {
+     font-size: 15em;
+     color: #8492A6;
+ }
+
+#section-card .card {
     border-radius: 5%;
 }
 
-#section-favorites .card .card-image .responsive-img {
+#section-card .card .card-image .responsive-img {
     border-top-left-radius: 5%;
     border-top-right-radius: 5%;
 }
 
-#section-favorites .card .card-title {
+#section-card .card .card-title {
     font-weight: bold;
     font-size: 30px;
     color: #47525E;
@@ -42,7 +53,7 @@
     padding-bottom: 1%;;
 } 
 
-#section-favorites .card p {
+#section-card .card p {
     color: #969FAA;
     white-space: nowrap;
     text-overflow: ellipsis;
