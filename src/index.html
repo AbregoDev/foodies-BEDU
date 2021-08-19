@@ -12,27 +12,542 @@
     <!-- Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <title>Webpack setup</title>
+    <title>Foodies-Random Meals</title>
 </head>
-
+<!-- Comentario -->
 <body>
-    <h1>Webpack</h1>
-    <div class="row">
-        <div class="col s12 m6">
-            <div class="card">
-                <div class="card-image">
-                    <img src="images/sample-1.jpg">
-                    <span class="card-title">Card Title</span>
-                    <a class="btn-floating halfway-fab waves-effect waves-light red"><i
-                            class="material-icons">add</i></a>
-                </div>
-                <div class="card-content">
-                    <p>I am a very simple card. I am good at containing small bits of information. I am convenient
-                        because I require little markup to use effectively.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
+<!--Seccion principal (buscador y boton random)-->
+    <div class="background-main">
+        <img id="background-main-img">
+        <main class="container row" id="main-header">
+           <article class="col s6">
+            <h1 class="title-main">TODAY'S MEAL</h1>
+            <p class="flow-text">Try something new everyday!</p>
+            <a href="recipeDetail.html" class="button-main waves-effect waves-light btn-large red accent-2 z-depth-4"><i class="material-icons left">shuffle</i>Random meal</a>
+           </article>
 
+           <article class="search-bar col s6" >
+               <div class="input-field">
+                   <input type="text" id="autocomplete-input" class="autocomplete">
+                   <label for="autocomplete-input">Find a recipe</label>
+                   <Button id="searchButton">
+                       <i class="material-icons prefix">search</i>
+                    </Button>
+               </div>
+           </article>
+        </main>
+    </div>
+<!--Seccion tarjetas de platillos favoritos-->
+    <div class="background-section">
+        <section class="container row" id="section-favorites">
+
+            <article class="col s4">
+                <h4 class="title-section">Our favorites </h4>
+            </article>
+            <article class="col s8">
+                <h4 class="title-section_line">&nbsp</h4>
+            </article>
+            <!--Pancakes-->
+            <article class="col s4">
+                <div class="card fav">
+                    <div class="card-image">
+                        <img class="responsive-img" id="favorites1">
+                        <a class="btn-floating halfway-fab waves-effect waves-light red" href="recipeDetail.html?id=52854"><i
+                                class="material-icons">arrow_forward</i></a>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title">Card Title</span>
+                        <p>I am a very simple card.</p>
+                    </div>
+                </div>
+            </article>
+            <!--New York Cheese-->
+            <article class="col s4">
+                <div class="card fav">
+                    <div class="card-image">
+                        <img class="responsive-img" id="favorites2">
+                        <a class="btn-floating halfway-fab waves-effect waves-light red" href="recipeDetail.html?id=52858"><i
+                                class="material-icons">arrow_forward</i></a>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title">Card Title</span>
+                        <p>I am a very simple card.</p>
+                    </div>
+                </div>
+            </article>
+            <!--English Breakfast-->
+            <article class="col s4">
+                <div class="card fav">
+                    <div class="card-image">
+                        <img class="responsive-img" id="favorites3">
+                        <a class="btn-floating halfway-fab waves-effect waves-light red" href="recipeDetail.html?id=52895"><i
+                                class="material-icons">arrow_forward</i></a>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title">Card Title</span>
+                        <p>I am a very simple card.</p>
+                    </div>
+                </div>
+            </article>
+            <!--Pizza Express-->
+            <article class="col s4">
+                <div class="card fav">
+                    <div class="card-image">
+                        <img class="responsive-img" id="favorites4">
+                        <a class="btn-floating halfway-fab waves-effect waves-light red" href="recipeDetail.html?id=53014"><i
+                                class="material-icons">arrow_forward</i></a>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title">Card Title</span>
+                        <p>I am a very simple card.</p>
+                    </div>
+                </div>
+            </article>
+            <!--Big Mac-->
+            <article class="col s4">
+                <div class="card fav">
+                    <div class="card-image">
+                        <img class="responsive-img" id="favorites5">
+                        <a class="btn-floating halfway-fab waves-effect waves-light red" href="recipeDetail.html?id=53013"><i
+                                class="material-icons">arrow_forward</i></a>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title">Card Title</span>
+                        <p>I am a very simple card.</p>
+                    </div>
+                </div>
+            </article>
+            <!--Chicken Enchiladas-->
+            <article class="col s4">
+                <div class="card fav">
+                    <div class="card-image">
+                        <img class="responsive-img" id="favorites6">
+                        <a class="btn-floating halfway-fab waves-effect waves-light red" href="recipeDetail.html?id=52765"><i
+                                class="material-icons">arrow_forward</i></a>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title">Card Title</span>
+                        <p>I am a very simple card.</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </div>
+<!--Seccion carrusel de Paises-->
+    <div class="background-section">
+        <section class="container row">
+
+            <article class="col s2">
+                <h4 class="title-section">Region</h4>
+            </article>
+            <article class="col s10">
+                <h4 class="title-section_line">&nbsp</h4>
+            </article>
+
+            <article class="col s12 carousel-paises">
+                <article class="c-item">
+
+                    <a class="col s4" onclick='valueSender("American")'>
+                        <div class="card horizontal">
+                            <div class="card-image">
+                                <img class="responsive-img" id ="flag">
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <p class="flow-text">Country</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="col s4" onclick='valueSender("British")'>
+                        <div class="card horizontal">
+                            <div class="card-image">
+                                <img class="responsive-img" id ="flag">
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <p class="flow-text">Country</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="col s4" onclick='valueSender("Canadian")'>
+                        <div class="card horizontal">
+                            <div class="card-image">
+                                <img class="responsive-img" id ="flag">
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <p class="flow-text">Country</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="col s4" onclick='valueSender("Chinese")'>
+                        <div class="card horizontal">
+                            <div class="card-image">
+                                <img class="responsive-img" id ="flag">
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <p class="flow-text">Country</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="col s4" onclick='valueSender("Croatian")'>
+                        <div class="card horizontal">
+                            <div class="card-image">
+                                <img class="responsive-img" id ="flag">
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <p class="flow-text">Country</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="col s4" onclick='valueSender("Dutch")'>
+                        <div class="card horizontal">
+                            <div class="card-image">
+                                <img class="responsive-img" id ="flag">
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <p class="flow-text">Country</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="col s4" onclick='valueSender("Egyptian")'>
+                        <div class="card horizontal">
+                            <div class="card-image">
+                                <img class="responsive-img" id ="flag">
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <p class="flow-text">Country</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="col s4" onclick='valueSender("French")'>
+                        <div class="card horizontal">
+                            <div class="card-image">
+                                <img class="responsive-img" id ="flag">
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <p class="flow-text">Country</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="col s4" onclick='valueSender("Greek")'>
+                        <div class="card horizontal">
+                            <div class="card-image">
+                                <img class="responsive-img" id ="flag">
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <p class="flow-text">Country</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+                <article class="c-item">
+
+                    <a class="col s4" onclick='valueSender("Indian")'>
+                        <div class="card horizontal">
+                            <div class="card-image">
+                                <img class="responsive-img" id ="flag">
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <p class="flow-text">Country</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="col s4" onclick='valueSender("Irish")'>
+                        <div class="card horizontal">
+                            <div class="card-image">
+                                <img class="responsive-img" id ="flag">
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <p class="flow-text">Country</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="col s4" onclick='valueSender("Italian")'>
+                        <div class="card horizontal">
+                            <div class="card-image">
+                                <img class="responsive-img" id ="flag">
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <p class="flow-text">Country</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="col s4" onclick='valueSender("Jamaican")'>
+                        <div class="card horizontal">
+                            <div class="card-image">
+                                <img class="responsive-img" id ="flag">
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <p class="flow-text">Country</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="col s4" onclick='valueSender("Japanese")'>
+                        <div class="card horizontal">
+                            <div class="card-image">
+                                <img class="responsive-img" id ="flag">
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <p class="flow-text">Country</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="col s4" onclick='valueSender("Kenyan")'>
+                        <div class="card horizontal">
+                            <div class="card-image">
+                                <img class="responsive-img" id ="flag">
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <p class="flow-text">Country</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="col s4" onclick='valueSender("Malaysian")'>
+                        <div class="card horizontal">
+                            <div class="card-image">
+                                <img class="responsive-img" id ="flag">
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <p class="flow-text">Country</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="col s4" onclick='valueSender("Mexican")'>
+                        <div class="card horizontal">
+                            <div class="card-image">
+                                <img class="responsive-img" id ="flag">
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <p class="flow-text">Country</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="col s4" onclick='valueSender("Moroccan")'>
+                        <div class="card horizontal">
+                            <div class="card-image">
+                                <img class="responsive-img" id ="flag">
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <p class="flow-text">Country</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+                <article class="c-item">
+
+                    <a class="col s4" onclick='valueSender("Polish")'>
+                        <div class="card horizontal">
+                            <div class="card-image">
+                                <img class="responsive-img" id ="flag">
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <p class="flow-text">Country</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="col s4" onclick='valueSender("Portuguese")'>
+                        <div class="card horizontal">
+                            <div class="card-image">
+                                <img class="responsive-img" id ="flag">
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <p class="flow-text">Country</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="col s4" onclick='valueSender("Russian")'>
+                        <div class="card horizontal">
+                            <div class="card-image">
+                                <img class="responsive-img" id ="flag">
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <p class="flow-text">Country</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="col s4" onclick='valueSender("Spanish")'>
+                        <div class="card horizontal">
+                            <div class="card-image">
+                                <img class="responsive-img" id ="flag">
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <p class="flow-text">Country</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="col s4" onclick='valueSender("Thai")'>
+                        <div class="card horizontal">
+                            <div class="card-image">
+                                <img class="responsive-img" id ="flag">
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <p class="flow-text">Country</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="col s4" onclick='valueSender("Tunisian")'>
+                        <div class="card horizontal">
+                            <div class="card-image">
+                                <img class="responsive-img" id ="flag">
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <p class="flow-text">Country</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="col s4" onclick='valueSender("Turkish")'>
+                        <div class="card horizontal">
+                            <div class="card-image">
+                                <img class="responsive-img" id ="flag">
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <p class="flow-text">Country</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="col s4" onclick='valueSender("Unknown")'>
+                        <div class="card horizontal">
+                            <div class="card-image">
+                                <img class="responsive-img" id ="flag">
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <p class="flow-text">Country</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="col s4" onclick='valueSender("Vietnamese")'>
+                        <div class="card horizontal">
+                            <div class="card-image">
+                                <img class="responsive-img" id ="flag">
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <p class="flow-text">Country</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+            </article>
+        </section>
+        <section class="container row" id="car-btn-container">
+            <article class="col s2" id="car-btns">
+                <a id="prev"><i class="medium material-icons prev">chevron_left</i></a>
+                <a id="next"><i class="medium material-icons next">chevron_right</i></a>
+            </article>
+        </section>
+        
+    </div>
+    <!--Seccion con imagen-->
+    <div class="background-sectionImg">
+        <section class="container row">
+            <article class="col s12">
+                <figure>
+                    <img class="responsive-img" id="breakfast">
+                </figure>
+            </article>
+        </section>
+    </div>
+<!--Footer de pagina-->
+    <footer>
+        <div class="background-section" id="about-section">
+            <section class="container row">
+                <article class="col s4">
+                    <ul>
+                        <li class="flow-text">Creators</li>
+                        <li><a href="https://github.com/Ernestve">Ernesto Velasco Valdez</a></li> 
+                        <li><a href="https://github.com/pepetellez">José Antonio Aguilar Téllez</a></li> 
+                        <li><a href="https://github.com/mafer13cp">María Fernanda Cota Pérez</a></li> 
+                        <li><a href="https://github.com/AbregoDev">Bryan Daniel Moreno Abrego</a></li> 
+                        <li><a href="https://github.com/EnriqueHM">Juan Enrique Hernández Martínez</a></li> 
+                    </ul>
+                </article>
+                <article class="col s4">
+                    <ul>
+                        <li class="flow-text">Resources</li>
+                        <li><a href="https://www.themealdb.com/">TheMealDB</a></li> 
+                        <li><a href="https://materializecss.com/">Materialize</a></li> 
+                    </ul>
+                </article>
+                <article class="col s4">
+                    <ul>
+                        <li class="flow-text">About us</li>
+                        <li>We're a group of students from <a href="https://bedu.org/"><strong>BEDU</strong></a> and this is our final project.</li>
+                        <li> We developed the entire interface and created the methods to use the API. </li> 
+                    </ul>
+                </article>
+            </section>
+        </div>
+        <div class="background-footer">
+            <section class="container row">
+                <article class="col s4">
+                    <h6 class="footer-text">©️2021 all rights reserved</h6>
+                </article>
+                <article class="col s4 center">
+                    <h6 class="footer-text"><strong>Foodies</strong></h6> 
+                </article>
+                <article class="footer-img col s4">
+                    <h6 class="footer-text">Proudly made in México</h6>
+                    <img class="footer-iconoMX" id="iconoMX" alt="icon made in mexico">
+                </article>
+            </section>
+        </div>  
+    </footer>
+</body>
+<script>
+    function valueSender(region){
+        localStorage.setItem("region", region);
+        window.location.href='recipeRegion.html';
+    }
+</script>
 </html>

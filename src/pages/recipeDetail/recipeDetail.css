@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+
+#logoIcon {
+    font-size: 45px;
+    margin-right: 0px;
+    margin-left: 16px;
+}
+#recipeHeader {
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+    height: 460px;
+}
+
+#recipeHeader .row {
+    height: 100%;
+    /* background-color: silver; */
+}
+
+#recipeHeader .image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%;
+    padding-right: 3%;
+}
+
+#main-loader {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#recipeImage {
+    height: 94%;
+    border-radius: 20px;
+}
+
+#recipeHeader .recipe-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding-left: 3%;
+}
+
+#recipe-details-title {
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    font-size: 34px;
+    color: #47525E;
+}
+
+#recipe-details-category-title,
+#recipe-details-region-title {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    color: #47525E;
+}
+
+#recipe-details-category,
+#recipe-details-region {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: #47525E;
+}
+
+#categories {
+    display: flex;
+    justify-content: flex-start;
+}
+
+#categories > a {
+    background-color: #F95F62;
+    color: white;
+    margin-right: 14px;
+    padding: 6px 10px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    border-radius: 14px;
+}
+
+#recipeIngredients {
+    width: 80%;
+    margin: auto;
+    margin-top: 60px;
+}
+
+#recipeIngredients .ingredientsTitle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 40px;
+    /* background-color: chartreuse; */
+}
+
+#recipeIngredients h2 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    color: #47525E;
+}
+
+.titleLine {
+    background-color: #F95F62;
+    width: 100%;
+    height: 10px;
+    margin-left: 30px;
+    align-self: flex-end;
+}
+
+#ingredientsGrid {
+    margin-top: 60px;
+}
+
+#recipeIngredients .loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 18rem;
+}
+
+#recipeIngredients .ingredientContainer {
+    border: 1px solid gray;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px 50px;
+    /* height: 100%; */
+}
+
+#recipeIngredients img {
+    width: 80%;
+    align-self: center;
+    margin: 20px;
+}
+
+#recipeIngredients hr {
+    width: 100%;
+}
+
+#recipeIngredients .ingredientName {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #47525E;
+    margin: 10px 20px;
+    text-transform: capitalize;
+    height: 3rem;
+}
+
+#recipeIngredients .ingredientQuantity {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    color: #47525E;
+    margin: 10px 20px;
+    text-transform: capitalize;
+    height: 4rem;
+}
+
+#recipeInstructions {
+    width: 80%;
+    margin: auto;
+}
+
+#recipeInstructions .ingredientsTitle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 40px;
+    margin-bottom: 60px;
+}
+
+#recipeInstructions h2 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    color: #47525E;
+}
+
+#recipeText h3 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 26px;
+    color: #47525E;
+    line-height: 3rem;
+    margin-bottom: 20px;
+}
+
+footer {
+    margin-top: 60px;
+}
+
+.background-footer{
+    background-color: #ff5252;
+    margin-bottom: -20px;
+}
+.footer-text{
+    color: #ffffff;
+}
+.footer-img{
+    display: flex;
+    align-items: center;
+}
+.footer-iconoMX{
+    height: 20px;
+    margin-left: 8px;
+}
+h5 {
+    cursor: default;
+}
