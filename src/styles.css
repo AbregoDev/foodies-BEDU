@@ -219,3 +219,7 @@ a {
 #section-favorites .card-content {
     cursor: default;
 }
+
+#searchButton:hover {
+    cursor: pointer;
+}

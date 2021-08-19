@@ -148,3 +148,7 @@
     display: flex;
     justify-content: center;
 }
+
+#searchButton:hover {
+    cursor: pointer;
+}
