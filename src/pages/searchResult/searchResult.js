@@ -107,7 +107,7 @@ function populateRecipes(searchQuery) {
     // console.log(data);
     if (data.meals == null)
     {
-        noMeals(madeWith);
+        noMeals(madeWith, searchQuery);
     }
     else 
     {
