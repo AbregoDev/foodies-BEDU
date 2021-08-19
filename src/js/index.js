@@ -148,7 +148,13 @@ function valueSender(region){
     localStorage.setItem("region", region);
     window.location.href='recipeRegion.html';
 }
-function valueSenderSearch(search){
-    localStorage.setItem("search", search);
-    window.location.href='searchResults.html';
+
+// Add event listener to search button
+const searchButton = document.getElementById('searchButton');
+searchButton.addEventListener('click', valueSenderSearch);
+
+function valueSenderSearch(){
+    const searchQuery = document.getElementById('autocomplete-input').value;
+    const newUrl = `searchResult.html?q=${searchQuery}`;
+    window.location.href = newUrl;
 }

@@ -27,7 +27,7 @@
                <div class="input-field">
                    <input type="text" id="autocomplete-input" class="autocomplete">
                    <label for="autocomplete-input">Find a recipe</label>
-                   <i class="material-icons prefix">search</i>
+                   <Button id="searchButton"><i class="material-icons prefix">search</i></Button>
                </div>
            </article>
         </main>
@@ -36,13 +36,17 @@
 <!--Seccion resultados en nombre-->      
     <div class="background-section">
         <section class="container row" id="section-card">
+            <div class="ingredientsTitle">
+                <h2 id="searchTitle">Search...</h2>
+                <div class="titleLine"></div>
+            </div>
 
-            <article class="col s4">
-                <h4 class="title-section">Search Results</h4>
+            <!-- <article class="col s4">
+                <h4 class="title-section"> Results</h4>
             </article>
             <article class="col s8">
                 <h4 class="title-section_line">&nbsp</h4>
-            </article>
+            </article> -->
 
             <div id="byName"></div>
         </section>
@@ -51,13 +55,17 @@
 <!--Seccion resultados "Made with ..."-->      
 <div class="background-section">
     <section class="container row" id="section-card">
-
-        <article class="col s4">
+        <div class="ingredientsTitle">
+            <h2 id="madeWithTitle">Search...</h2>
+            <div class="titleLine"></div>
+        </div>
+        
+        <!-- <article class="col s5">
             <h4 class="title-section">Made with</h4>
         </article>
-        <article class="col s8">
+        <article class="col s7">
             <h4 class="title-section_line">&nbsp</h4>
-        </article>
+        </article> -->
 
         <div id="madeWith"></div>
     </section>

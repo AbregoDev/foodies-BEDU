@@ -17,6 +17,29 @@
     background-color: #FCFAF3;
 }
 
+.ingredientsTitle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 40px;
+    margin-bottom: 60px;
+}
+
+.ingredientsTitle h2 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    color: #47525E;
+}
+
+.titleLine {
+    background-color: #F95F62;
+    width: 60%;
+    height: 10px;
+    align-self: flex-end;
+    margin-left: 30px;
+}
+
 .title-section{
     color: #47525E;
     border-top: 0;
@@ -119,4 +142,9 @@
     border-radius: 8px;
     top: -0.4rem;
     right: -0.2rem;
+}
+
+#loaderContainer {
+    display: flex;
+    justify-content: center;
 }
