@@ -216,3 +216,6 @@ a {
     color: blue;
 }
 
+#section-favorites .card-content {
+    cursor: default;
+}
