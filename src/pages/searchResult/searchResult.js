@@ -30,11 +30,9 @@ function populateRecipes(searchQuery) {
 
     getMealByName(searchQuery)
     .then(data => {
-        // Delete loader if exists
+        // Delete loader
         const loader = document.getElementById('loaderContainer');
-        if(loader) {
-            byName.removeChild(byName.firstChild);
-        }
+        byName.removeChild(loader);
 
         // console.log(data);
         if (data.meals == null)
