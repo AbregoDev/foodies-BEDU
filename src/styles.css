@@ -70,6 +70,12 @@
     top: -0.4rem;
     right: -0.2rem;
 }
+#searchButton {
+    width: 0px;
+    height: 0px;
+    border:none;
+    background-color: #FCFAF3;
+}
 #searchButton:hover {
     cursor: pointer;
 }
