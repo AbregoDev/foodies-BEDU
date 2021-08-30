@@ -8,7 +8,9 @@
     border-bottom: 5px solid #ff5252;
     color: #ff5252;
 }
-
+#searchButton:hover {
+    cursor: pointer;
+}
 .row{
     margin-bottom: 0;
 }
